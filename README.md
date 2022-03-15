@@ -1,4 +1,4 @@
-# RPi 4 doorbell applications
+# RPi 4 campanello application
 
 Aim of the repo was to collect all the modules needed to setup a doorbell on a RPi 4 using HD Camera, USB MIC and Headphone speakers.
 The SW is composed of the following modules:
