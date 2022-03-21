@@ -1,0 +1,16 @@
+[Unit]
+Description = RTSP Camera Recording Service
+Requires = systemd-user-sessions.service network.target sound.target
+After = multi-user.target
+
+[Service]
+User = pi
+Group = pi
+Type = simple  
+#ExecStart = /usr/bin/python /home/pi/campanello/talkiepi/vox.py
+ExecStart = /bin/sh /home/pi/campanello/recording/rec.sh
+Restart = always 
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target

@@ -1,0 +1,10 @@
+cameras:
+  Camera1:
+    Name: Campanello
+    IP: 127.0.0.1
+    Port: 8554
+    Path: /unicast
+    User: admin
+    Password: 123456
+Recorder:
+  Path: /home/pi/campanello/recording/recs

@@ -1,0 +1,15 @@
+[Unit]
+Description = Vox Service for Mumble Client
+Requires = systemd-user-sessions.service network.target
+After = multi-user.target
+
+[Service]
+User = pi
+Group = pi
+Type = simple  
+ExecStart =  /usr/local/bin/v4l2rtspserver -U admin:123456 -W 1920 -H 1080 -F 15 -P 8554 /dev/video0
+Restart = always 
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target

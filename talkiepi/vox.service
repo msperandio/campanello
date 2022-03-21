@@ -1,0 +1,17 @@
+[Unit]
+Description = Vox Service for Mumble Client
+Requires = systemd-user-sessions.service network.target sound.target
+After = multi-user.target
+
+[Service]
+WorkingDirectory= /home/pi/campanello/talkiepi
+User = pi
+Group = pi
+Type = simple  
+#ExecStart = /usr/bin/screen -DmS vox /usr/bin/python /home/pi/campanello/talkiepi/vox.py
+ExecStart = /bin/sh /home/pi/campanello/talkiepi/vox.sh > /home/pi/campanello/talkiepi/vox.log 2>&1
+Restart = always 
+RestartSec = 5
+StandardInput=tty-force
+[Install]
+WantedBy = multi-user.target
