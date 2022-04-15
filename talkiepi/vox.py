@@ -10,6 +10,7 @@ import sys
 marker = 1
 while True:
     try:
+        print(marker)
         if marker == 0:
             file = open ("/sys/class/gpio/gpio25/device/gpio/gpio25/active_low","w")
             file.write("1")
@@ -23,9 +24,12 @@ while True:
             marker = 0
         time.sleep(1)
     except (KeyboardInterrupt, SystemExit):
+        print("Except")
         file = open ("/sys/class/gpio/gpio25/device/gpio/gpio25/active_low","w")
-        file.write("0")
+        file.write("1")
         file.close()
         time.sleep(1)
+        marker= marker + 1
+        maerker = marker % 2
 
 sys.exit()
